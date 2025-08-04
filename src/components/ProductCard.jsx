@@ -24,7 +24,7 @@ function ProductCard({ product }) {
           </h2>
 
           <p className="text-gray-600   mb-4 border-b-2 border-zinc-400 pb-4">
-            {product.description.substring(0, 40) + "..."}
+            {product.description.substring(0, 35) + "..."}
           </p>
 
           <div className="flex items-center justify-between">

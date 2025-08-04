@@ -2,9 +2,13 @@ import { ShoppingCart, User } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo-removebg.png";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../features/products/productSlice";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const searchTerm = useSelector((state) => state.product.searchTerm);
 
   const handleUser = () => {
     setIsOpen(!isOpen);
@@ -69,6 +73,8 @@ function Navbar() {
               type="text"
               placeholder="Search Product"
               className="bg-zinc-100 border border-zinc-300 rounded-md px-3 py-3 w-full focus:outline-none"
+              value={searchTerm}
+              onChange={(e) => dispatch(setSearchTerm(e.target.value))}
             />
           </form>
 

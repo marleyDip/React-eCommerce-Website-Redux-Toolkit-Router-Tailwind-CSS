@@ -47,7 +47,7 @@ const products = [
     id: 6,
     title: "Sony WH-1000XM6",
     price: 349.99,
-    category: "Headphones",
+    category: "Accessories",
     description: "Industry-leading noise cancellation and sound.",
     image: "https://cdn.mos.cms.futurecdn.net/49YqdsTeHeJZJQWJRSYMef.jpg",
   },
@@ -55,7 +55,7 @@ const products = [
     id: 7,
     title: "Apple Watch Series 10",
     price: 499.99,
-    category: "Smart Watches",
+    category: "Accessories",
     description: "Next-gen watch with all-day health tracking.",
     image:
       "https://assets.gadgetandgear.com/upload/media/apple-watch-10--46mm-rose-gold.jpeg",
@@ -64,7 +64,7 @@ const products = [
     id: 8,
     title: "Bose SoundLink Revolve+ II",
     price: 279.99,
-    category: "Speakers",
+    category: "Accessories",
     description: "360° sound in a portable package.",
     image:
       "https://www.gadgetstyler.com/wp-content/uploads/2023/04/71wtzn5AnL._AC_SL1500_.jpg",
@@ -82,7 +82,7 @@ const products = [
     id: 10,
     title: "Logitech MX Keys S",
     price: 99.99,
-    category: "Keyboards",
+    category: "Accessories",
     description: "Precision typing with smart illumination.",
     image:
       "https://www.pcworld.com/wp-content/uploads/2025/04/DSC03106.jpg?quality=50&strip=all",
@@ -91,7 +91,7 @@ const products = [
     id: 11,
     title: "Razer DeathAdder V3",
     price: 59.99,
-    category: "Mice",
+    category: "Accessories",
     description: "High-performance mouse for esports-quality tracking.",
     image:
       "https://i.rtings.com/assets/products/XZTWfCaG/razer-deathadder-v3-pro/design-large.jpg?format=auto",
@@ -136,7 +136,7 @@ const products = [
     id: 16,
     title: "HyperX Cloud III",
     price: 119.99,
-    category: "Headphones",
+    category: "Accessories",
     description: "Comfortable headset built for long gaming sessions.",
     image:
       "https://cdn.prod.website-files.com/64adca1358d4f63115d85133/64adcb69b1c9d8527f4a1c35_6488b105919fcffd04f673af_HyperX%2520Cloud%2520III%2520Gaming%2520Headset%2520KF%25208%2520Square.jpeg",
@@ -145,7 +145,7 @@ const products = [
     id: 17,
     title: "JBL Flip 7",
     price: 149.99,
-    category: "Speakers",
+    category: "Accessories",
     description: "Portable, waterproof Bluetooth speaker.",
     image:
       "https://www.cnet.com/a/img/resize/ea8ba3d48aff93bcd9c8c6da1edd025ca6757deb/hub/2025/03/10/b42421ba-1ef8-4351-9aa2-2483003cfe6f/jbl-flip-7-and-charge-6-together-1.jpg?auto=webp&fit=crop&height=1200&width=1200",
@@ -163,7 +163,7 @@ const products = [
     id: 19,
     title: "Keychron K8 Pro",
     price: 129.99,
-    category: "Keyboards",
+    category: "Accessories",
     description: "Solid wireless mechanical keyboard with RGB lighting.",
     image:
       "https://siliconz.vn/cdn/shop/files/9b0ef55e5372beef159a8f4ae0db03f7.png?v=1728187488&width=1946",
@@ -172,7 +172,7 @@ const products = [
     id: 20,
     title: "Logitech MX Master 4",
     price: 99.99,
-    category: "Mice",
+    category: "Accessories",
     description: "Ergonomic, high‑precision multi-device mouse.",
     image:
       "https://9to5mac.com/wp-content/uploads/sites/6/2025/06/mx-master4.jpg?quality=82&strip=all",

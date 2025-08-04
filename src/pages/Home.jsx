@@ -1,5 +1,7 @@
+import { useDispatch } from "react-redux";
 import Footer from "../components/Footer";
 import ProductGrid from "../components/productGrid";
+import { setSelectedCategory } from "../features/products/productSlice";
 
 const categories = [
   "All",
@@ -11,6 +13,8 @@ const categories = [
 ];
 
 function Home() {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div className="bg"></div>
@@ -22,6 +26,7 @@ function Home() {
               <button
                 key={cat}
                 className="bg-gray-300 px-4 py-2 rounded-md text-black active:scale-105  hover:bg-zinc-400 ease-in transition-all"
+                onClick={() => dispatch(setSelectedCategory(cat))}
               >
                 {cat}
               </button>
