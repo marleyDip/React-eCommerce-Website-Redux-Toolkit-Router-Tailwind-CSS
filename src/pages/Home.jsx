@@ -30,9 +30,8 @@ function Home() {
         </div>
 
         <ProductGrid />
-
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

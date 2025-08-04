@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-slate-900 shadow-md">
+      {/* newsletter */}
       <div className="container mx-auto px-4">
         <div className="min-h-16">
           <div className="flex justify-between items-center flex-col md:flex-row py-10">
@@ -33,6 +34,7 @@ function Footer() {
         </div>
       </div>
 
+      {/* pages, logo */}
       <div className="bg-slate-800 text-white py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -89,7 +91,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col items-center md:items-start  justify-center">
+            <div className="flex flex-col items-center md:items-start lg:items-center justify-center">
               <h2 className="text-2xl font-semibold my-4">Category</h2>
 
               <ul className="space-y-2 font-medium">
@@ -111,7 +113,7 @@ function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col items-center lg:items-start  justify-center space-y-0 md:space-y-2">
+            <div className="flex flex-col items-center   justify-center space-y-0 md:space-y-2">
               <h2 className="text-2xl font-semibold my-4">Contact Us</h2>
 
               <p>Someshpur, Belkuchi, Sirajganj, Bangladesh</p>
@@ -126,6 +128,19 @@ function Footer() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* footer */}
+      <div className="text-center pt-6 pb-6 text-lg font-semibold text-white">
+        &copy; {new Date().getFullYear()}{" "}
+        <a
+          href="https://marleydip.netlify.app/"
+          target="_blank"
+          className="text-emerald-500 hover:text-sky-500"
+        >
+          Md Sofian Hasan
+        </a>
+        . All Right Reserved
       </div>
     </footer>
   );
