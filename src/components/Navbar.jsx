@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md sticky top-0 z-50">
       <>
         <div className="py-4 shadow-md">
           <ul className="relative container mx-auto flex flex-wrap items-center justify-between md:flex-row px-4 md:px-2">

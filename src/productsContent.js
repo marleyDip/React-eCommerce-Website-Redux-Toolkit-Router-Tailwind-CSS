@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     id: 1,
     title: "MacBook Pro M4",
@@ -178,3 +178,5 @@ export const products = [
       "https://9to5mac.com/wp-content/uploads/sites/6/2025/06/mx-master4.jpg?quality=82&strip=all",
   },
 ];
+
+export default products;
