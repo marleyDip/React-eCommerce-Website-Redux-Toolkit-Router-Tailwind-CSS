@@ -1,7 +1,7 @@
 import { ShoppingCart, User } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-removebg.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,8 +59,8 @@ function Navbar() {
 
         <nav className="flex items-center justify-between container mx-auto px-2 py-8 md:py-6">
           <div className="flex items-center">
-            <Link to="/">
-              <img src={logo} alt="Logo" className="w-[100px] h-[50px]" />
+            <Link to="/" className="bg-gray-700 px-4 py-2 rounded">
+              <img src={logo} alt="Logo" className="w-[150px] h-[30px]" />
             </Link>
           </div>
 
@@ -68,12 +68,15 @@ function Navbar() {
             <input
               type="text"
               placeholder="Search Product"
-              className="bg-zinc-100 border border-zinc-300 rounded-md px-3 py-3 w-full focus:outline"
+              className="bg-zinc-100 border border-zinc-300 rounded-md px-3 py-3 w-full focus:outline-none"
             />
           </form>
 
           <Link>
-            <ShoppingCart />
+            <ShoppingCart
+              size={54}
+              className="cursor-pointer bg-gray-100 px-3 py-2 rounded-full"
+            />
           </Link>
         </nav>
       </>
