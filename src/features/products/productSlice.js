@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import Products from "../../productsContent";
+import products from "../../productsContent";
 
 const initialState = {
-  items: Products,
-  filteredItems: Products,
+  items: products,
+  filteredItems: products,
   searchTerm: "",
 };
 
@@ -19,7 +19,7 @@ const filterProducts = (state) => {
 };
 
 const productSlice = createSlice({
-  name: "Products",
+  name: "product",
   initialState,
   reducers: {
     setSearchTerm: (state, action) => {
