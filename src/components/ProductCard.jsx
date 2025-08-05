@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
+  //console.log(product.id);
+
   return (
-    <Link>
+    <Link to={`/product/${product.id}`}>
       <div className="group bg-white border border-gray-100 shadow-md rounded-2xl hover:shadow-2xl cursor-pointer overflow-hidden transition-all duration-300  ">
         <div className="relative overflow-hidden">
           <img
