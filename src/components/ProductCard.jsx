@@ -31,7 +31,7 @@ function ProductCard({ product }) {
 
           <div className="flex items-center justify-between">
             <span className="text-2xl  font-bold text-gray-900">
-              $ {product.price}
+              ৳ {product.price}
             </span>
 
             <button className="group/btn  flex items-center space-x-2 px-4 py-2 cursor-pointer bg-gray-200 text-gray-900 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">

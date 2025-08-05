@@ -7,11 +7,13 @@ import Navbar from "./components/Navbar";
 
 import { Provider } from "react-redux";
 import { store } from "./App/Store";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
+        <ToastContainer />
         <Navbar />
 
         <Routes>

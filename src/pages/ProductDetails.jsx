@@ -1,4 +1,5 @@
 import { ArrowLeft, ShoppingCart } from "lucide-react";
+import { toast } from "react-toastify";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -7,9 +8,30 @@ import { addToCard } from "../features/cart/cartSlice";
 
 function ProductDetails() {
   const { id } = useParams();
-
   const dispatch = useDispatch();
 
+  //add to cart
+  const cart = useSelector((state) => state.cart.items);
+
+  const handleAddToCart = () => {
+    const alreadyInCart = cart.find((item) => item.id === product.id);
+
+    if (alreadyInCart) {
+      dispatch(addToCard(product));
+
+      toast.info("Already Added to Cart!", {
+        position: "top-center",
+      });
+    } else {
+      dispatch(addToCard(product));
+
+      toast.success("Added to Cart!", {
+        position: "top-center",
+      });
+    }
+  };
+
+  // product
   const product = useSelector((state) => {
     return state.product.items.find((p) => p.id === parseInt(id));
   });
@@ -63,7 +85,7 @@ function ProductDetails() {
 
             <div className="mb-6">
               <span className="text-2xl sm:text-3xl font-bold">
-                ${product.price}
+                ৳ {product.price}
               </span>
             </div>
 
@@ -75,8 +97,8 @@ function ProductDetails() {
             </div>
 
             <button
-              className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-md shadow-md hover:shadow-lg gap-2 bg-zinc-200 hover:bg-zinc-300 transform hover:scale-105 transition-all duration-300"
-              onClick={() => dispatch(addToCard(product))}
+              className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-md shadow-md hover:shadow-lg gap-2 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 hover:from-sky-500 hover:to-indigo-600 text-white font-bold transform hover:scale-105 transition-all duration-300"
+              onClick={handleAddToCart}
             >
               <ShoppingCart /> Add to Cart
             </button>
