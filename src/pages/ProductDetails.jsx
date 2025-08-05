@@ -3,6 +3,7 @@ import { ArrowLeft, ShoppingCart } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Link, useParams } from "react-router-dom";
+import { addToCard } from "../features/cart/cartSlice";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -40,31 +41,43 @@ function ProductDetails() {
           <ArrowLeft /> Back to Products
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div className="shadow-md p-4 rounded md:w-[600px] w-[300px] mb-1 md:mb-6 lg:mb-0 hover:shadow-lg transform hover:scale-110 transition-all duration-300">
-            <img src={product.image} alt={product.title} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center px-4">
+          {/* Product Image */}
+          <div className="shadow-md p-4 rounded w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-auto object-contain"
+            />
           </div>
 
-          <div>
-            <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+          {/* Product Content */}
+          <div className="w-full px-2">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-4">
+              {product.title}
+            </h1>
 
-            <p className="text-gray-600 mb-6 font-semibold">
+            <p className="text-gray-600 mb-6 font-medium text-sm sm:text-base">
               {product.description}
             </p>
 
             <div className="mb-6">
-              <span className="text-3xl font-bold">${product.price}</span>
+              <span className="text-2xl sm:text-3xl font-bold">
+                ${product.price}
+              </span>
             </div>
 
             <div className="mb-6">
-              <h3 className="font-semibold mb-2">category</h3>
-
+              <h3 className="font-semibold mb-2 text-base">Category</h3>
               <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm">
                 {product.category}
               </span>
             </div>
 
-            <button className="flex items-center justify-center w-full md:w-auto px-8 py-3 rounded-md shadow-md hover:shadow-lg gap-2 bg-zinc-200 hover:bg-zinc-300 transform hover:scale-105 transition-all duration-300">
+            <button
+              className="flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-md shadow-md hover:shadow-lg gap-2 bg-zinc-200 hover:bg-zinc-300 transform hover:scale-105 transition-all duration-300"
+              onClick={() => dispatch(addToCard(product))}
+            >
               <ShoppingCart /> Add to Cart
             </button>
           </div>

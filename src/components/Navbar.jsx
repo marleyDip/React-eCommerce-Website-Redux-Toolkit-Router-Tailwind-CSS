@@ -10,6 +10,9 @@ function Navbar() {
   const dispatch = useDispatch();
   const searchTerm = useSelector((state) => state.product.searchTerm);
 
+  const cartItems = useSelector((state) => state.cart.items);
+  const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   const handleUser = () => {
     setIsOpen(!isOpen);
   };
@@ -78,12 +81,19 @@ function Navbar() {
             />
           </form>
 
-          <Link>
-            <ShoppingCart
-              size={54}
-              className="cursor-pointer bg-gray-100 px-3 py-2 rounded-full"
-            />
-          </Link>
+          <div className="relative group">
+            <Link to={"/cart"}>
+              <ShoppingCart
+                size={54}
+                className="cursor-pointer bg-gray-200 px-3 py-2 rounded-full"
+              />
+              {itemCount > 0 && (
+                <span className="absolute -top-3 right-1 bg-blue-600 w-6 h-6 text-white text-xs rounded-full grid place-items-center transform group-hover:-translate-y-1">
+                  {itemCount}
+                </span>
+              )}
+            </Link>
+          </div>
         </nav>
       </>
     </header>
