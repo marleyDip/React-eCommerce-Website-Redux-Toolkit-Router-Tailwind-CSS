@@ -9,7 +9,28 @@ body {
 }
 
 .bg {
-    background: url("./assets/Top-Banner.jpg");
-    background-size: cover;
-    height: 70vh;
+  width: 100%;
+  height: 70vh;
+  background-image: url("./assets/Top-Banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* For small screens: shorter height */
+@media (max-width: 768px) {
+  .bg {
+    height: 50vh;
+  }
+}
+
+/* ✅ For xl and above: change background position */
+/* ✅ For xl and above: change background position */
+@media (min-width: 1280px) {
+  .bg {
+    background-size: auto;          /* Show at original size */
+    background-position: 0 0;       /* Align top-left (like no positioning) */
+  }
+}
+
+

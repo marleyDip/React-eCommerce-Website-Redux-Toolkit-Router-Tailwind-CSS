@@ -18,25 +18,31 @@ function CartPage() {
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   //update
-  const UpdateQty = (id, newQty) => {
+  const UpdateQty = (id, newQty, currentQty, name) => {
     if (newQty <= 0) {
-      toast.error("Please delete the product!", {
+      toast.error(`Delete ${name} from Cart?`, {
         position: "top-center",
       });
     } else {
       dispatch(updateQuantity({ id, quantity: newQty }));
 
-      toast.success("Product Added Once More!", {
-        position: "top-center",
-      });
+      if (newQty > currentQty) {
+        toast.success(`Increased ${name} Quantity!`, {
+          position: "top-center",
+        });
+      } else if (newQty < currentQty) {
+        toast.info(`Decreased ${name} Quantity!`, {
+          position: "top-center",
+        });
+      }
     }
   };
 
   //remove
-  const handleRemove = (id) => {
+  const handleRemove = (id, name) => {
     dispatch(removeFromCart({ id }));
 
-    toast.error("Item removed from cart successfully!", {
+    toast.error(`Removed ${name} from Cart Successfully!`, {
       position: "top-center",
     });
   };
@@ -107,7 +113,14 @@ function CartPage() {
 
                   <button
                     className="p-1 font-medium rounded-full hover:bg-gray-100"
-                    onClick={() => UpdateQty(item.id, item.quantity - 1)}
+                    onClick={() =>
+                      UpdateQty(
+                        item.id,
+                        item.quantity - 1,
+                        item.quantity,
+                        item.title
+                      )
+                    }
                   >
                     <Minus size={16} />
                   </button>
@@ -130,14 +143,21 @@ function CartPage() {
 
                   <button
                     className="p-1 font-medium rounded-full hover:bg-gray-100"
-                    onClick={() => UpdateQty(item.id, item.quantity + 1)}
+                    onClick={() =>
+                      UpdateQty(
+                        item.id,
+                        item.quantity + 1,
+                        item.quantity,
+                        item.title
+                      )
+                    }
                   >
                     <Plus size={16} />
                   </button>
 
                   <div
                     className="ml-4 to-red-500 hover:text-red-700 cursor-pointer"
-                    onClick={() => handleRemove(item.id)}
+                    onClick={() => handleRemove(item.id, item.title)}
                   >
                     <Trash2 size={20} />
                   </div>
@@ -145,6 +165,8 @@ function CartPage() {
               </div>
 
               <div className="text-right">
+                <p className="font-bold">৳ {item.price}</p>
+                <p className="font-bold">{item.quantity}</p>
                 <p className="font-bold">
                   ৳ {(item.price * item.quantity).toFixed(2)}
                 </p>

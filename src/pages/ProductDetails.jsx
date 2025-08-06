@@ -19,13 +19,13 @@ function ProductDetails() {
     if (alreadyInCart) {
       dispatch(addToCard(product));
 
-      toast.info("Already Added to Cart!", {
+      toast.info(`Already ${product.title} Added to Cart!`, {
         position: "top-center",
       });
     } else {
       dispatch(addToCard(product));
 
-      toast.success("Added to Cart!", {
+      toast.success(`${product.title} Added to Cart!`, {
         position: "top-center",
       });
     }
